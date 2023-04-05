@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <title>Sign Up</title>
+</head>
+<body>
+    <section>
+        <div class="form-box1">
+            <div class="form-value">
+                <form action="http://localhost:8000/signUpSuccess" method="post">
+                    <h2>Sign Up</h2>
+                    <div class="inputbox">
+                        <img src="static/styles/photos/person-outline.svg"></img>
+                        <input type="text" required name="userName" autocomplete="off">
+                        <label for="userName">Username</label>
+                    </div>
+                    <div class="inputbox">
+                        <img src="static/styles/photos/lock-closed-outline.svg"></img>
+                        <input type="password" required name="pw">
+                        <label for="pw">Password</label>
+                    </div>
+                    <div class="inputbox">
+                        <img src="static/styles/photos/alert-outline.svg"></img>
+                        <input type="password" required name="confirm">
+                        <label for="confirm">Confirm Password</label>
+                    </div>
+                    <div class="inputbox">
+                        <img src="static/styles/photos/call-outline.svg"></img>
+                        <input type="tel" required name="phoneNumber" autocomplete="off">
+                        <label for="phoneNumber">Phone Number</label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                    <div class="logIn">
+                        <p>Already Have An Account? <a href="http://localhost:8000/logIn">Log In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
