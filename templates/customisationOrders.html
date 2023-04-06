@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style1.css') }}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Your Customisation Orders</h1>      
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="http://localhost:8000/bookBrowsing">Books</a></li>
+        <li><a href="http://localhost:8000/customisationPage">Customise Book Printing</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="http://localhost:8000/bookCartOrder"><span class="glyphicon glyphicon-shopping-cart"></span> Book Cart</a></li>
+        <li class="active"><a href="http://localhost:8000/customisationOrders"><span class="glyphicon glyphicon-shopping-cart"></span> Customised Printing Orders</a></li>
+        <li><a href="http://localhost:8000/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="col-sm-8 col-md-6" style="margin: auto;">Book Name</th>
+        <th class="col-sm-1 col-md-1 text-center" style="margin: auto;">CustomiseID</th>
+        <th class="col-sm-1 col-md-1 text-center" style="margin: auto;">Book Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for customisationOrder in customisationOrders %}
+      <tr>
+        <td class="col-sm-8 col-md-6">
+          <div class="media">
+            <div class="media-body">
+            <h4 class="media-heading" style="margin: auto;">{{ customisationOrder.customiseBookName }}</h4>
+            </div>
+          </div>
+        </td>
+        <td class="col-sm-1 col-md-1 text-center" style="margin: auto;">{{ customisationOrder.customiseID }}</td>
+        <td class="col-sm-1 col-md-1 text-center" style="margin: auto;">{{ customisationOrder.bookType }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

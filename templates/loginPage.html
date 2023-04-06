@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="http://localhost:8000/logIn" method="post">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <img src="static/styles/photos/person-outline.svg"></img>
+                        <input type="text" required name="userName" autocomplete="off">
+                        <label for="userName">Username</label>
+                    </div>
+                    <div class="inputbox">
+                        <img src="static/styles/photos/lock-closed-outline.svg"></img>
+                        <input type="password" required name="pw">
+                        <label for="pw">Password</label>
+                    </div>
+                    <div class="forget">
+                        <label for=""><a href="http://localhost:8000/resetPassword">Forget Password</a></label>
+                      
+                    </div>
+                    <button type="submit">Login</button>
+                    <div class="register">
+                        <p>Don't have an account? <a href="http://localhost:8000/signUp">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
